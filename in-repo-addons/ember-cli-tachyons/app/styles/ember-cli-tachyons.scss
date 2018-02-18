@@ -1,0 +1,49 @@
+/*
+  TODO: Open questions
+
+    - Borders got slighlty effed up, basically bb doesnt work with bw1. This is
+      because of the cascade and because bb sets width. bb shouldn't set width
+      but shrug.
+
+*/
+$all-rules: () !default;
+
+@import 'ember-cli-tachyons/scss/_normalize';
+
+@import 'ember-cli-tachyons/default-settings';
+@import 'ember-cli-tachyons/mixins';
+
+// Modules
+@import 'ember-cli-tachyons/borders';
+@import 'ember-cli-tachyons/border-widths';
+@import 'ember-cli-tachyons/colors';
+@import 'ember-cli-tachyons/display';
+@import 'ember-cli-tachyons/spacing';
+@import 'ember-cli-tachyons/widths';
+@import 'ember-cli-tachyons/heights';
+@import 'ember-cli-tachyons/box-shadow';
+@import 'ember-cli-tachyons/type-scale';
+@import 'ember-cli-tachyons/typography';
+@import 'ember-cli-tachyons/flexbox';
+@import 'ember-cli-tachyons/font-weight';
+@import 'ember-cli-tachyons/text-align';
+
+// Extensions
+@import 'ember-cli-tachyons/extensions';
+
+// TODO Not bad, but eventually let's make them customizable & use our breakpoints
+@import 'ember-cli-tachyons/scss/_media-queries';
+@import 'ember-cli-tachyons/scss/_line-height';
+@import 'ember-cli-tachyons/scss/_border-radius';
+@import 'ember-cli-tachyons/scss/_letter-spacing';
+@import 'ember-cli-tachyons/scss/_links';
+
+// TODO Ignored modules
+// @import 'ember-cli-tachyons/scss/_gradients';
+// @import 'ember-cli-tachyons/scss/_hovers';
+// @import 'ember-cli-tachyons/scss/_tables';
+// @import 'ember-cli-tachyons/scss/_nested';
+
+@import 'ember-cli-tachyons/unmodified-tachyons-modules';
+
+@import 'ember-cli-tachyons/build-all-rules';

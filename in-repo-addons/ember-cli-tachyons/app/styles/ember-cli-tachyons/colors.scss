@@ -1,0 +1,54 @@
+@each $name, $value in $colors {
+  .#{$name} {
+    color: $value;
+  }
+  .bg-#{$name} {
+    // We're a color
+    @if type_of($value) == 'color' {
+      background-color: $value;
+    }
+
+    // We're a gradient
+    @else {
+      background-image: $value;
+    }
+  }
+  .fill-#{$name} * {
+    fill: $value;
+  }
+  .b--#{$name} {
+    border-color: $value;
+  }
+  .hover-#{$name}:not(.no-hover):hover {
+    color: $value;
+  }
+  .hover-bg-#{$name}:not(.no-hover):hover {
+    background-color: $value;
+  }
+  .hover-fill-#{$name}:not(.no-hover):hover * {
+    fill: $value;
+  }
+}
+
+// Other useful rules that are in modules we ended up not including
+.bg-transparent {
+  background-color: transparent;
+}
+.b--transparent {
+  border-color: transparent;
+}
+.bt--transparent {
+  border-top-color: transparent;
+}
+.bl--transparent {
+  border-left-color: transparent;
+}
+.br--transparent {
+  border-right-color: transparent;
+}
+.bb--transparent {
+  border-bottom-color: transparent;
+}
+.b--inherit {
+  border-color: inherit;
+}

@@ -1,0 +1,11 @@
+// The original Tachyons module also specified border-width on these classes,
+// making it hard to override due to the cascade.
+
+@include rules((
+  ba: ( border-style: solid ),
+  bt: ( border-top-style: solid ),
+  br: ( border-right-style: solid ),
+  bb: ( border-bottom-style: solid ),
+  bl: ( border-left-style: solid ),
+  bn: ( border-style: none )
+));

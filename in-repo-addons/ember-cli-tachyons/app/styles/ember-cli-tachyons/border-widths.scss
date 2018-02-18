@@ -1,0 +1,9 @@
+@each $scale, $value in map-merge($border-width-scale, ( 0: 0px )) {
+  @include rules((
+    bw#{$scale}: ( border-width: $value ),
+    btw#{$scale}: ( border-top-width: $value ),
+    bbw#{$scale}: ( border-bottom-width: $value ),
+    blw#{$scale}: ( border-left-width: $value ),
+    brw#{$scale}: ( border-right-width: $value )
+  ));
+}

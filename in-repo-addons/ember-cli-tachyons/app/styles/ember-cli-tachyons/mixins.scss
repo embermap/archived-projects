@@ -1,0 +1,34 @@
+@mixin rules($map) {
+  $all-rules: map-merge($all-rules, $map) !global;
+}
+
+@mixin rule($class, $styles) {
+  $map: ( $class: $styles );
+  $all-rules: map-merge($all-rules, $map) !global;
+}
+
+@mixin below($value) {
+  @if type-of($value) == 'number' {
+    @media screen and (max-width: $value) {
+      @content;
+    }
+  }
+  @else {
+    @media screen and (max-width: map-get($breakpoints, $value)) {
+      @content;
+    }
+  }
+}
+
+@mixin above($value) {
+  @if type-of($value) == 'number' {
+    @media screen and (min-width: $value) {
+      @content;
+    }
+  }
+  @else {
+    @media screen and (min-width: map-get($breakpoints, $value)) {
+      @content;
+    }
+  }
+}

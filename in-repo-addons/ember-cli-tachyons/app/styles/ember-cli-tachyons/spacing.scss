@@ -1,0 +1,43 @@
+$spacing-extra-small: map-get($spacing, "1");
+$spacing-small: map-get($spacing, "2");
+$spacing-medium: map-get($spacing, "3");
+$spacing-large: map-get($spacing, "4");
+$spacing-extra-large: map-get($spacing, "5");
+$spacing-extra-extra-large: map-get($spacing, "6");
+$spacing-extra-extra-extra-large: map-get($spacing, "7");
+
+@each $scale, $size in map-merge($spacing, ( 0: 0px )) {
+  @include rules((
+    // Padding
+    pa#{$scale}: ( padding: $size ),
+    pl#{$scale}: ( padding-left: $size ),
+    pr#{$scale}: ( padding-right: $size ),
+    pt#{$scale}: ( padding-top: $size ),
+    pb#{$scale}: ( padding-bottom: $size ),
+    pv#{$scale}: ( padding-top: $size, padding-bottom: $size ),
+    ph#{$scale}: ( padding-left: $size, padding-right: $size ),
+
+    // Margins
+    ma#{$scale}: ( margin: $size ),
+    ml#{$scale}: ( margin-left: $size ),
+    mr#{$scale}: ( margin-right: $size ),
+    mt#{$scale}: ( margin-top: $size ),
+    mb#{$scale}: ( margin-bottom: $size ),
+    mv#{$scale}: ( margin-top: $size, margin-bottom: $size ),
+    mh#{$scale}: ( margin-left: $size, margin-right: $size ),
+    na#{$scale}: ( margin: -$size ),
+    nl#{$scale}: ( margin-left: -$size ),
+    nr#{$scale}: ( margin-right: -$size ),
+    nt#{$scale}: ( margin-top: -$size ),
+    nb#{$scale}: ( margin-bottom: -$size ),
+    nv#{$scale}: ( margin-top: -$size, margin-bottom: -$size ),
+    nh#{$scale}: ( margin-left: -$size, margin-right: -$size ),
+  ));
+}
+
+@include rules((
+  mla: ( margin-left: auto ),
+  mra: ( margin-right: auto ),
+  center: ( margin-left: auto, margin-right: auto ),
+  uncenter: ( margin-left: initial, margin-right: initial )
+));

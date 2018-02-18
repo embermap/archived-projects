@@ -1,0 +1,16 @@
+$heights-map: (
+  h-0: ( height: 0 ),
+  maxh-0: ( max-height: 0 ),
+  maxh-none: ( max-height: none ),
+  h-auto: ( height: auto )
+);
+
+@each $name, $value in $heights {
+  $heights-map: map-merge($heights-map, (
+    h-#{$name}: ( height: $value ),
+    maxh-#{$name}: ( max-height: $value ),
+    minh-#{$name}: ( min-height: $value ),
+  ));
+}
+
+@include rules($heights-map);

@@ -1,0 +1,9 @@
+$type-scale-map: ();
+
+@each $name, $value in $type-scale {
+  $type-scale-map: map-merge($type-scale-map, (
+    f#{$name}: ( font-size: $value )
+  ));
+}
+
+@include rules($type-scale-map);

@@ -1,0 +1,11 @@
+{
+  "name": "ember-cli-tachyons",
+  "keywords": [
+    "ember-addon"
+  ],
+  "dependencies": {
+    "tachyons-sass": "*",
+    "broccoli-stew": "*",
+    "broccoli-merge-trees": "*"
+  }
+}

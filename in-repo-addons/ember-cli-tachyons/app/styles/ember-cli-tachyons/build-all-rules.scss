@@ -1,0 +1,23 @@
+@mixin declaration($class, $styles) {
+  .#{$class} {
+    @each $prop, $val in $styles {
+      #{$prop}: $val;
+    }
+  }
+}
+
+@each $class, $styles in $all-rules {
+  @include declaration($class, $styles);
+}
+
+@each $bp, $screen-width in $breakpoints {
+  @media screen and (min-width: #{$screen-width}) {
+    @each $class, $styles in $all-rules {
+      $suffix: -#{$bp}\+;
+
+      $responsive-class: #{$class}#{$suffix};
+
+      @include declaration($responsive-class, $styles);
+    }
+  }
+}

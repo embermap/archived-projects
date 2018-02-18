@@ -1,0 +1,6 @@
+@each $name, $value in $shadows {
+  @include rules((
+    shadow-#{$name}: ( box-shadow: $value ),
+    "hover-shadow-#{$name}:hover": ( box-shadow: $value )
+  ));
+}
